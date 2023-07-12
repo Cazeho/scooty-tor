@@ -19,7 +19,7 @@ class ScreenshotSpider(scrapy.Spider):
         # Create a Proxy object
         webdriver_service = Service(ChromeDriverManager().install())
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--proxy-server=http://127.0.0.1:8118')
+        chrome_options.add_argument('--proxy-server=%s' % PROXY)
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
