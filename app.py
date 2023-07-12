@@ -7,7 +7,7 @@ st.sidebar.header("Home")
 st.title("Scooty-Tor")
 
 
-search=st.text_input("Enter your IOC (Hash File)")
+search=st.text_input("Search a website in the Dark Web")
 
 if q is not None:
     st.write(search)
