@@ -1,3 +1,4 @@
 selenium
 selenium_webdriver
 streamlit
+webdriver_manager
