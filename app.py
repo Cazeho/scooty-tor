@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-
+st.set_option('browser.gatherUsageStats', False)
 st.set_page_config(page_title="home",  page_icon="🧭")
 st.sidebar.header("Home")
 
