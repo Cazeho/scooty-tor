@@ -16,7 +16,7 @@ st.title("Scooty-Tor")
 
 def main():
     # Set Streamlit app title and layout
-    st.title("Screenshot Spider")
+    st.title("Scan a dark website")
 
     # Get the URL from the user
     url = st.text_input("Enter the URL to take a screenshot:", "")
