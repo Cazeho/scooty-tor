@@ -1,5 +1,8 @@
 # scooty-tor
 
+
+## set up proxy
+
 ```
 apt install tor privoxy -y
 
