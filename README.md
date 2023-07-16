@@ -23,6 +23,7 @@ curl --proxy 127.0.0.1:8118 https://check.torproject.org | grep "Congratulations
 nano /etc/tor/torrc
 
 -->
+
 HiddenServiceDir /var/lib/tor/hidden_service/
 HiddenServicePort 80 127.0.0.1:80
 
