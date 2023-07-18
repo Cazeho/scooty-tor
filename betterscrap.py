@@ -25,6 +25,7 @@ options.add_argument("--disable-gpu")
 driver = wire_driver.Chrome(seleniumwire_options=seleniumwire_options,options=options)
 
 driver.implicitly_wait(15)
+url="https://utilimixfr.com"
 del driver.requests
 try:
     driver.get("https://utilimixfr.com")
