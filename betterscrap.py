@@ -8,12 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from seleniumwire import webdriver
 from seleniumwire import webdriver as wire_driver
-
+from seleniumwire.thirdparty.mitmproxy.exceptions import TcpException
 
 seleniumwire_options = {
     'verify_ssl': False,
     'suppress_connection_errors': False   # Bypass SSL verification
 }
+
 
 options = Options()
 options.add_argument("--headless")
@@ -26,11 +27,17 @@ driver = wire_driver.Chrome(seleniumwire_options=seleniumwire_options,options=op
 driver.implicitly_wait(15)
 url="https://utilimixfr.com"
 del driver.requests
-driver.get(url)
-driver.implicitly_wait(15)
+try:
+    driver.get(url)
+except TcpException as e:
+    print(str(e)+"###############################################")
+
+
+
+driver.implicitly_wait(30)
 
 with open("logs.txt","w") as f:
     for request in driver.requests:
         f.write(request.url+'\n')
-        #f.write(str(request.body)+'\n')
-        #f.write(str(request.headers)+'\n')
+        f.write(str(request.body)+'\n')
+        f.write(str(request.headers)+'\n')
