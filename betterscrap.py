@@ -41,4 +41,3 @@ with open("logs.txt","w") as f:
     for request in driver.requests:
         f.write(request.url+'\n')
         f.write(str(request.body)+'\n')
-        f.write(str(request.headers)+'\n')
