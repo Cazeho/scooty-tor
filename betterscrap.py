@@ -25,15 +25,15 @@ options.add_argument("--disable-gpu")
 driver = wire_driver.Chrome(seleniumwire_options=seleniumwire_options,options=options)
 
 driver.implicitly_wait(15)
-url="https://utilimixfr.com"
 del driver.requests
 try:
-    driver.get(url)
+    driver.get("https://utilimixfr.com")
 except TcpException as e:
-    print(str(e)+"###############################################")
+    print(str(e))
 
 
 
+driver.get(url)
 driver.implicitly_wait(30)
 
 with open("logs.txt","w") as f:
